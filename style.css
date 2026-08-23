@@ -81,3 +81,226 @@ p {
     font-size: 0.95rem;
     color: #708090;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+.cz-footer {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
+  padding: 60px 8% 40px 8%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* --- CTA Banner Section --- */
+.cz-cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.cz-robot-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.cz-robot-img {
+  width: 230px;
+  height: auto;
+  position: absolute;
+  top: -145px;
+  left: 50%;
+  transform: translateX(-110%); /* Changed from -50% to -80% to move it left */
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cz-cta-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 3px;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.cz-white-text {
+  color: #ffffff;
+}
+
+.cz-cyan-text {
+  color: #00f2fe;
+}
+
+/* CTA Action Buttons Bar */
+.cz-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cz-btn-payment {
+  background: #18191a;
+  color: #00f2fe;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cz-btn-payment:hover {
+  background: #222426;
+}
+
+.cz-social-bar {
+  background: #18191a;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cz-social-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.cz-social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.cz-social-icons a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cz-social-icons a:hover {
+  color: #00f2fe;
+}
+
+/* --- Links & Navigation Section --- */
+.cz-links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+}
+
+.cz-brand-column {
+  max-width: 460px;
+}
+
+.cz-brand-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.cz-brand-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #a0a5aa;
+  font-weight: 500;
+}
+
+.cz-nav-columns {
+  display: flex;
+  gap: 80px;
+}
+
+.cz-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cz-nav-col a {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cz-nav-col a:hover {
+  color: #00f2fe;
+}
+
+/* --- Bottom Bar --- */
+.cz-bottom-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 242, 254, 0.25);
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cz-bottom-links {
+  display: flex;
+  gap: 25px;
+}
+
+.cz-bottom-links a {
+  color: #00f2fe;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cz-copyright {
+  color: #a0a5aa;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* --- Chatbot Widget Button --- */
+.cz-chat-widget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 48px;
+  height: 48px;
+  background-color: #000000;
+  border: 2px solid #00f2fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+  z-index: 99;
+  transition: transform 0.2s ease;
+}
+
+.cz-chat-widget:hover {
+  transform: scale(1.08);
+}
