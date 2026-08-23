@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #03080c;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+#webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.content-container {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 8%;
+    width: 50%;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #00f2fe;
+    text-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #a0c4ff;
+    letter-spacing: 1px;
+}
+
+/* Page 6 Layout with Footer */
+.page-final {
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8%;
+}
+
+.site-footer {
+    width: 100%;
+    padding: 25px 8%;
+    background: rgba(3, 8, 12, 0.85);
+    border-top: 1px solid rgba(0, 242, 254, 0.2);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+.site-footer p {
+    font-size: 0.95rem;
+    color: #708090;
+}
