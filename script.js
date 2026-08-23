@@ -40,7 +40,7 @@ const particleTexture = createCrispParticleTexture();
 // Palette Definitions
 const COLOR_DARK_BLUE = new THREE.Color(0x0a369d);
 const COLOR_MID_BLUE  = new THREE.Color(0x0077e6);
-const COLOR_GOLD      = new THREE.Color(0xffb703);
+const COLOR_GOLD      = new THREE.Color(0xffb703); // Strictly on Saturn
 const COLOR_SKY_BLUE  = new THREE.Color(0x00f2fe);
 const COLOR_WHITE     = new THREE.Color(0xffffff);
 
@@ -200,7 +200,7 @@ const material = new THREE.PointsMaterial({
 const particles = new THREE.Points(geometry, material);
 scene.add(particles);
 
-// Ambient Dust (Sky Blue & White)
+// Ambient Dust (Strictly Sky Blue & White)
 const ambientGeometry = new THREE.BufferGeometry();
 const ambientPos = new Float32Array(AMBIENT_COUNT * 3);
 const ambientColors = new Float32Array(AMBIENT_COUNT * 3);
@@ -252,7 +252,7 @@ let scrollProgress = 0;
 function updateParticleStates(progress) {
     const targetPos = new Float32Array(SHAPE_COUNT * 3);
 
-    // Page 1 -> Page 2 Transition (Progress 0.0 to 0.2)
+    // Page 1 -> Page 2 Transition
     if (progress <= 0.2) {
         const factor = progress / 0.2;
         for (let i = 0; i < SHAPE_COUNT * 3; i++) {
@@ -260,7 +260,7 @@ function updateParticleStates(progress) {
             currentColors[i] = saturnColors[i] * (1 - factor) + flowerColors[i] * factor;
         }
     } 
-    // Page 2 -> Page 3 Transition (Progress 0.2 to 0.4)
+    // Page 2 -> Page 3 Transition
     else if (progress <= 0.4) {
         const factor = (progress - 0.2) / 0.2;
         for (let i = 0; i < SHAPE_COUNT * 3; i++) {
@@ -268,7 +268,7 @@ function updateParticleStates(progress) {
             currentColors[i] = flowerColors[i];
         }
     } 
-    // Pages 4, 5, 6: Remain fully dispersed with ambient movement
+    // Pages 4, 5, 6: Remain fully dispersed
     else {
         for (let i = 0; i < SHAPE_COUNT * 3; i++) {
             targetPos[i] = dispersedPositions[i];
@@ -280,7 +280,14 @@ function updateParticleStates(progress) {
     return targetPos;
 }
 
-// Animation Loop
+// Button Click Event Listeners
+document.getElementById('registerBtn').addEventListener('click', () => alert('Redirecting to Registration Page...'));
+document.getElementById('ticketsBtn').addEventListener('click', () => alert('Redirecting to Ticket Sales...'));
+document.getElementById('chatBtn').addEventListener('click', () => alert('Opening Support Chat...'));
+document.getElementById('bellBtn').addEventListener('click', () => alert('No new notifications.'));
+document.getElementById('cartBtn').addEventListener('click', () => alert('Your cart is empty.'));
+
+// Animation Render Loop
 const clock = new THREE.Clock();
 
 function animate() {
@@ -336,3 +343,29 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+// FAQ Accordion Toggle Listener
+document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (question) {
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all other open items
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+            // Toggle clicked item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    }
+});
+
+// Explore button event listener
+const exploreBtn = document.querySelector('.explore-btn');
+if (exploreBtn) {
+    exploreBtn.addEventListener('click', () => {
+        alert('Navigating to all events...');
+    });
+}
