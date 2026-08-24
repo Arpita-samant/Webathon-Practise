@@ -56,23 +56,37 @@ button, a, input, .navbar {
     padding: 20px 40px;
     background-color: rgba(3, 8, 14, 0.9);
     backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .logo-icon {
     color: #00bcd4;
     font-size: 24px;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.logo-container:hover .logo-icon {
+    transform: rotate(180deg) scale(1.15);
+    color: #00f2fe;
 }
 
 .logo-text {
     font-weight: bold;
     font-size: 18px;
     letter-spacing: 1px;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.logo-container:hover .logo-text {
+    color: #00f2fe;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.7);
 }
 
 .nav-links {
@@ -84,6 +98,14 @@ button, a, input, .navbar {
     color: #cccccc;
     text-decoration: none;
     font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: #00f2fe;
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.8);
 }
 
 .nav-links a.active {
@@ -93,6 +115,11 @@ button, a, input, .navbar {
 
 .nav-links a.highlight {
     color: #ffcc00;
+}
+
+.nav-links a.highlight:hover {
+    color: #ffe600;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
 }
 
 .nav-actions {
@@ -107,6 +134,16 @@ button, a, input, .navbar {
     color: #ffffff;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    color: #00f2fe;
+    transform: scale(1.25) rotate(12deg);
+    filter: drop-shadow(0 0 6px #00f2fe);
 }
 
 .login-btn {
@@ -115,6 +152,31 @@ button, a, input, .navbar {
     color: #ffffff;
     padding: 6px 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #00f2fe;
+    color: #000000;
+    border-color: #00f2fe;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #00f2fe;
+    transform: scale(1.1);
 }
 
 /* Hero Section */
@@ -139,10 +201,23 @@ button, a, input, .navbar {
     padding: 4px 10px;
     font-weight: bold;
     font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.sponsor-box:hover {
+    background-color: #00f2fe;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
+    transform: scale(1.05);
 }
 
 .sponsor-text {
     color: #aaaaaa;
+    transition: color 0.3s ease;
+}
+
+.sponsor-tag:hover .sponsor-text {
+    color: #ffffff;
 }
 
 .date {
@@ -150,6 +225,12 @@ button, a, input, .navbar {
     font-size: 20px;
     margin-bottom: 20px;
     letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.date:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
 }
 
 .main-title {
@@ -158,6 +239,13 @@ button, a, input, .navbar {
     margin-bottom: 20px;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.main-title:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.9);
 }
 
 .description {
@@ -165,6 +253,11 @@ button, a, input, .navbar {
     line-height: 1.6;
     margin-bottom: 30px;
     font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.description:hover {
+    color: #dddddd;
 }
 
 .cta-buttons {
@@ -181,36 +274,34 @@ button, a, input, .navbar {
     transition: all 0.3s ease;
 }
 
-/* Primary Button Hover */
-.btn-primary:hover {
-    background-color: #00a6a6;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 139, 139, 0.4);
-}
-
-/* Secondary Button Hover */
-.btn-secondary:hover {
-    background-color: #ffffff;
-    color: #008b8b;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
-}
-
-/* Optional: click effect */
-.btn:active {
-    transform: translateY(0);
-}
-
 .btn-primary {
     background-color: #008b8b;
     color: #ffffff;
     border: none;
 }
 
+.btn-primary:hover {
+    background-color: #00e5ff;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.6);
+}
+
 .btn-secondary {
     background-color: transparent;
     color: #ffffff;
     border: 1px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #008b8b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 /* About Us Section Styles */
@@ -225,6 +316,14 @@ button, a, input, .navbar {
     letter-spacing: 4px;
     margin-bottom: 50px;
     text-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.section-title:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 22px rgba(0, 242, 254, 0.9);
+    transform: translateX(5px);
 }
 
 .about-content {
@@ -233,6 +332,11 @@ button, a, input, .navbar {
 
 .about-text-block {
     margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+.about-text-block:hover {
+    transform: translateX(4px);
 }
 
 .subtitle {
@@ -240,12 +344,23 @@ button, a, input, .navbar {
     font-size: 13px;
     letter-spacing: 1px;
     margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.about-text-block:hover .subtitle {
+    color: #00f2fe;
 }
 
 .about-heading {
     font-size: 32px;
     letter-spacing: 2px;
     color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.about-heading:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
 }
 
 .glow-line {
@@ -254,22 +369,43 @@ button, a, input, .navbar {
     background-color: #00bcd4;
     box-shadow: 0 0 8px #00bcd4;
     margin: 12px 0 20px 0;
+    transition: width 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-text-block:hover .glow-line {
+    width: 220px;
+    background-color: #00f2fe;
+    box-shadow: 0 0 14px #00f2fe;
 }
 
 .short-line {
     width: 80px;
 }
 
+.about-text-block:hover .short-line {
+    width: 140px;
+}
+
 .sub-heading {
     font-size: 16px;
     letter-spacing: 1.5px;
     color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.sub-heading:hover {
+    color: #00f2fe;
 }
 
 .about-description {
     color: #aaaaaa;
     font-size: 14px;
     line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.about-description:hover {
+    color: #ffffff;
 }
 
 /* Generic Middle Pages */
@@ -319,9 +455,15 @@ button, a, input, .navbar {
     position: absolute;
     top: -177px;
     left: 50%;
-    transform: translateX(-110%); /* Shifted left */
+    transform: translateX(-110%);
     z-index: 2;
     pointer-events: none;
+    animation: robotFloat 4s ease-in-out infinite;
+}
+
+@keyframes robotFloat {
+    0%, 100% { transform: translateX(-110%) translateY(0); }
+    50% { transform: translateX(-110%) translateY(-10px); }
 }
 
 .cz-cta-heading {
@@ -333,6 +475,12 @@ button, a, input, .navbar {
     color: #ffffff;
     position: relative;
     z-index: 1;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.cz-cta-heading:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
 }
 
 .cz-white-text { color: #ffffff; }
@@ -357,6 +505,14 @@ button, a, input, .navbar {
     text-decoration: none;
     letter-spacing: 1px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.cz-btn-payment:hover {
+    background: #00f2fe;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.7);
+    transform: translateY(-2px);
 }
 
 .cz-social-bar {
@@ -386,10 +542,14 @@ button, a, input, .navbar {
     color: #ffffff;
     font-size: 0.95rem;
     text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .cz-social-icons a:hover {
     color: #00f2fe;
+    transform: translateY(-3px) scale(1.2);
+    filter: drop-shadow(0 0 8px #00f2fe);
 }
 
 /* Links & Navigation */
@@ -411,6 +571,11 @@ button, a, input, .navbar {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 15px;
+    transition: text-shadow 0.3s ease;
+}
+
+.cz-brand-title:hover {
+    text-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
 }
 
 .cz-brand-desc {
@@ -418,6 +583,11 @@ button, a, input, .navbar {
     line-height: 1.5;
     color: #a0a5aa;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.cz-brand-desc:hover {
+    color: #dddddd;
 }
 
 .cz-nav-columns {
@@ -436,10 +606,14 @@ button, a, input, .navbar {
     font-size: 1.05rem;
     font-weight: 600;
     text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .cz-nav-col a:hover {
     color: #00f2fe;
+    transform: translateX(4px);
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
 }
 
 /* Bottom Copyright Bar */
@@ -463,6 +637,12 @@ button, a, input, .navbar {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cz-bottom-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.8);
 }
 
 .cz-copyright {
@@ -486,6 +666,18 @@ button, a, input, .navbar {
     cursor: pointer;
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
     z-index: 999;
+    animation: widgetPulse 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cz-chat-widget:hover {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.95);
+}
+
+@keyframes widgetPulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 /* --- PAGE 3: PARTNERS STYLES --- */
@@ -535,7 +727,8 @@ button, a, input, .navbar {
 .explore-btn:hover {
     background: #00e5ff;
     color: #000000;
-    box-shadow: 0 0 15px #00e5ff;
+    box-shadow: 0 0 25px #00e5ff;
+    transform: scale(1.03);
 }
 
 .title-group {
@@ -584,14 +777,19 @@ button, a, input, .navbar {
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
 }
 
 .card img {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.08);
 }
 
 /* --- PAGE 4: FAQ STYLES --- */
@@ -619,6 +817,12 @@ button, a, input, .navbar {
     margin-bottom: 40px;
     text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
     font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.faq-title:hover {
+    text-shadow: 0 0 30px rgba(0, 229, 255, 0.8);
+    transform: scale(1.03);
 }
 
 .faq-list {
@@ -633,13 +837,14 @@ button, a, input, .navbar {
     border-radius: 6px;
     overflow: hidden;
     background-color: transparent;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .faq-item:hover,
 .faq-item.active {
     background-color: rgba(255, 255, 255, 0.08);
     border-bottom-color: rgba(0, 229, 255, 0.4);
+    transform: translateX(4px);
 }
 
 .faq-question {
@@ -651,6 +856,7 @@ button, a, input, .navbar {
     font-size: 1.1rem;
     color: #00e5ff;
     user-select: none;
+    transition: color 0.3s ease;
 }
 
 .faq-num {
@@ -695,6 +901,40 @@ button, a, input, .navbar {
     }
 }
 
+@media (max-width: 900px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(3, 8, 14, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        gap: 18px;
+        border-bottom: 1px solid rgba(0, 242, 254, 0.3);
+        backdrop-filter: blur(12px);
+    }
+
+    .nav-links.mobile-open {
+        display: flex;
+    }
+
+    .hero, .about-section, .generic-page {
+        padding: 40px 24px;
+    }
+
+    .cz-links-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+}
+
 @media (max-width: 768px) {
     .faq-title {
         font-size: 2.4rem;
@@ -709,6 +949,15 @@ button, a, input, .navbar {
     .faq-answer {
         padding: 0 16px;
         font-size: 0.88rem;
+    }
+
+    .cz-cta-heading {
+        font-size: 2.5rem;
+    }
+
+    .cz-robot-img {
+        width: 180px;
+        top: -120px;
     }
 }
 

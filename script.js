@@ -246,29 +246,43 @@ window.addEventListener('mousemove', (e) => {
     targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2;
 });
 
-// Scroll Progress Logic Across 6 Pages
+// Scroll Progress Logic Across Pages (Locks Saturn & Flower Positions)
 let scrollProgress = 0;
 
 function updateParticleStates(progress) {
     const targetPos = new Float32Array(SHAPE_COUNT * 3);
 
+    // Page 1 (Saturn Strict Lock)
+    if (progress <= 0.05) {
+        for (let i = 0; i < SHAPE_COUNT * 3; i++) {
+            targetPos[i] = saturnPositions[i];
+            currentColors[i] = saturnColors[i];
+        }
+    } 
     // Page 1 -> Page 2 Transition
-    if (progress <= 0.2) {
-        const factor = progress / 0.2;
+    else if (progress <= 0.2) {
+        const factor = (progress - 0.05) / 0.15;
         for (let i = 0; i < SHAPE_COUNT * 3; i++) {
             targetPos[i] = saturnPositions[i] * (1 - factor) + flowerPositions[i] * factor;
             currentColors[i] = saturnColors[i] * (1 - factor) + flowerColors[i] * factor;
         }
     } 
+    // Page 2 (Flower Strict Lock)
+    else if (progress <= 0.25) {
+        for (let i = 0; i < SHAPE_COUNT * 3; i++) {
+            targetPos[i] = flowerPositions[i];
+            currentColors[i] = flowerColors[i];
+        }
+    }
     // Page 2 -> Page 3 Transition
     else if (progress <= 0.4) {
-        const factor = (progress - 0.2) / 0.2;
+        const factor = (progress - 0.25) / 0.15;
         for (let i = 0; i < SHAPE_COUNT * 3; i++) {
             targetPos[i] = flowerPositions[i] * (1 - factor) + dispersedPositions[i] * factor;
             currentColors[i] = flowerColors[i];
         }
     } 
-    // Pages 4, 5, 6: Remain fully dispersed
+    // Pages 4+: Dispersed stream
     else {
         for (let i = 0; i < SHAPE_COUNT * 3; i++) {
             targetPos[i] = dispersedPositions[i];
@@ -281,11 +295,21 @@ function updateParticleStates(progress) {
 }
 
 // Button Click Event Listeners
-document.getElementById('registerBtn').addEventListener('click', () => alert('Redirecting to Registration Page...'));
-document.getElementById('ticketsBtn').addEventListener('click', () => alert('Redirecting to Ticket Sales...'));
-document.getElementById('chatBtn').addEventListener('click', () => alert('Opening Support Chat...'));
-document.getElementById('bellBtn').addEventListener('click', () => alert('No new notifications.'));
-document.getElementById('cartBtn').addEventListener('click', () => alert('Your cart is empty.'));
+document.getElementById('registerBtn')?.addEventListener('click', () => alert('Redirecting to Registration Page...'));
+document.getElementById('ticketsBtn')?.addEventListener('click', () => alert('Redirecting to Ticket Sales...'));
+document.getElementById('chatBtn')?.addEventListener('click', () => alert('Opening Support Chat...'));
+document.getElementById('bellBtn')?.addEventListener('click', () => alert('No new notifications.'));
+document.getElementById('cartBtn')?.addEventListener('click', () => alert('Your cart is empty.'));
+
+// Mobile Navigation Toggle Logic
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+    });
+}
 
 // Animation Render Loop
 const clock = new THREE.Clock();

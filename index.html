@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cognizance 2026</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/1b83818bd3.js" crossorigin="anonymous"></script>
-    <!-- FontAwesome for Social Icons -->
+    <!-- FontAwesome for Social & Navigation Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -27,6 +25,11 @@
                 <span class="logo-text">COGNIZANCE 2026</span>
             </div>
 
+            <!-- Hamburger Button for Responsive/Phone Sizes -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
             <nav class="nav-links">
                 <a href="#" class="active">HOME</a>
                 <a href="#">Events</a>
@@ -38,8 +41,8 @@
             </nav>
 
             <div class="nav-actions">
-                <button class="icon-btn" id="bellBtn"><i class="fa-solid fa-bell"></i></button>
-                <button class="icon-btn" id="cartBtn"><i class="fa-solid fa-cart-shopping"></i></button>
+                <button class="icon-btn" id="bellBtn" aria-label="Notifications"><i class="fa-solid fa-bell"></i></button>
+                <button class="icon-btn" id="cartBtn" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
                 <button class="login-btn">LOGIN</button>
             </div>
         </header>
@@ -99,7 +102,23 @@
             </div>
         </section>
 
-        <!-- PAGE 3: Workshop Partners -->
+         <!-- PAGE 3: Ambient Floating Particles -->
+        <section class="page generic-page">
+            <div class="page-inner">
+                <h2 class="section-title">NEBULA STREAM</h2>
+                <p class="about-description">Endless particle dynamics engineered with WebGL precision.</p>
+            </div>
+        </section>
+
+         <!-- PAGE 4: Ambient Floating Particles -->
+        <section class="page generic-page">
+            <div class="page-inner">
+                <h2 class="section-title">QUANTUM VOID</h2>
+                <p class="about-description">Immersive deep-space interactive atmosphere generated in real time.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 5: Workshop Partners -->
         <section class="page partners-section">
             <div class="partners-container">
                 <div class="partners-header">
@@ -112,27 +131,19 @@
                 </div>
 
                 <div class="partners-grid">
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/amex.png"
-                            alt="American Express"></div>
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/autodesk.png"
-                            alt="Autodesk"></div>
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/avalanche.png"
-                            alt="Avalanche"></div>
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/avalanche.png"
-                            alt="Microsoft"></div>
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/isro.png" alt="ISRO">
-                    </div>
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/cdsl.png" alt="CDSL">
-                    </div>
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/geeksforgeeks.png"
-                            alt="GeeksforGeeks"></div>
-                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/turing.jpg" alt="Turing">
-                    </div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/amex.png" alt="American Express"></div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/autodesk.png" alt="Autodesk"></div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/avalanche.png" alt="Avalanche"></div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/avalanche.png" alt="Microsoft"></div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/isro.png" alt="ISRO"></div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/cdsl.png" alt="CDSL"></div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/geeksforgeeks.png" alt="GeeksforGeeks"></div>
+                    <div class="card"><img src="https://www.cognizance.org.in/Images/sponsors/turing.jpg" alt="Turing"></div>
                 </div>
             </div>
         </section>
 
-        <!-- PAGE 4: FAQs -->
+        <!-- PAGE 6: FAQs -->
         <section class="page faq-section">
             <div class="faq-container">
                 <h1 class="faq-title">FAQS</h1>
@@ -184,8 +195,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span><strong class="faq-num">5.</strong> How to register for Events in Cognizance
-                                2026?</span>
+                            <span><strong class="faq-num">5.</strong> How to register for Events in Cognizance 2026?</span>
                             <span class="icon">+</span>
                         </div>
                         <div class="faq-answer">
@@ -197,24 +207,14 @@
             </div>
         </section>
 
-        <!-- PAGE 5: Ambient Floating Particles -->
-        <section class="page generic-page">
-            <div class="page-inner">
-                <h2 class="section-title">NEBULA STREAM</h2>
-                <p class="about-description">Endless particle dynamics engineered with WebGL precision.</p>
-            </div>
-        </section>
-
-        <!-- PAGE 6: Final Section & Cognizance Footer -->
+        <!-- PAGE 7: Final Section & Cognizance Footer -->
         <section class="page page-final">
             <footer class="cz-footer">
                 <!-- CTA Banner Section -->
                 <div class="cz-cta-container">
                     <div class="cz-robot-wrapper">
-                        <img src="https://www.cognizance.org.in/Images/robotfooter.png" alt="Robot"
-                            class="cz-robot-img">
-                        <h2 class="cz-cta-heading">BOOK YOUR <br><span class="cz-white-text">SLOTS</span> <span
-                                class="cz-cyan-text">NOW</span></h2>
+                        <img src="https://www.cognizance.org.in/Images/robotfooter.png" alt="Robot" class="cz-robot-img">
+                        <h2 class="cz-cta-heading">BOOK YOUR <br><span class="cz-white-text">SLOTS</span> <span class="cz-cyan-text">NOW</span></h2>
                     </div>
 
                     <div class="cz-cta-actions">
