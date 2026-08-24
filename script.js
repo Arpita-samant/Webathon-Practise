@@ -393,3 +393,4 @@ if (exploreBtn) {
         alert('Navigating to all events...');
     });
 }
+

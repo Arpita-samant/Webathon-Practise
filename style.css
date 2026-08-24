@@ -978,3 +978,199 @@ button, a, input, .navbar {
         display: none;
     }
 }
+
+/* =========================
+   AUTHENTICATION PAGES
+   ========================= */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+    background: #050b14;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/* AUTH BOX */
+
+.auth-box {
+    width: 400px;
+    padding: 45px 40px;
+    
+    background: rgba(8, 20, 32, 0.92);
+    border: 1px solid rgb(47, 252, 254);
+    border-radius: 18px;
+    
+    text-align: center;
+    
+    box-shadow:
+        0 0 10px rgba(47, 252, 254, 0.4),
+        0 0 30px rgba(47, 252, 254, 0.15);
+}
+
+
+/* HEADING */
+
+.auth-box h1 {
+    margin-bottom: 10px;
+
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+
+    color: rgb(47, 252, 254);
+
+    text-shadow:
+        0 0 8px rgba(47, 252, 254, 0.7);
+}
+
+
+/* SUBTEXT */
+
+.auth-box > p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* INPUTS */
+
+.auth-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+    margin: 9px 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    border: 1px solid rgba(47, 252, 254, 0.45);
+    border-radius: 8px;
+
+    color: white;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* INPUT FOCUS */
+
+.auth-box input:focus {
+    border-color: rgb(47, 252, 254);
+
+    box-shadow:
+        0 0 8px rgba(47, 252, 254, 0.5),
+        inset 0 0 8px rgba(47, 252, 254, 0.08);
+}
+
+
+/* PLACEHOLDER */
+
+.auth-box input::placeholder {
+    color: #777;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/* BUTTON */
+
+.auth-box button {
+    width: 100%;
+
+    padding: 14px;
+    margin-top: 18px;
+
+    border: 1px solid rgb(47, 252, 254);
+    border-radius: 8px;
+
+    background: transparent;
+    color: rgb(47, 252, 254);
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* BUTTON HOVER */
+
+.auth-box button:hover {
+    background: rgb(47, 252, 254);
+    color: #050b14;
+
+    box-shadow:
+        0 0 10px rgba(47, 252, 254, 0.8),
+        0 0 25px rgba(47, 252, 254, 0.4);
+
+    transform: translateY(-2px);
+}
+
+
+/* LINKS */
+
+.auth-box a {
+    color: rgb(47, 252, 254);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.auth-box a:hover {
+    text-shadow:
+        0 0 8px rgba(47, 252, 254, 0.8);
+}
+
+
+/* SUCCESS / ERROR MESSAGE */
+
+#loginMessage,
+#signupMessage {
+    margin-top: 15px;
+
+    color: rgb(47, 252, 254);
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .auth-container {
+        padding: 20px;
+    }
+
+    .auth-box {
+        width: 100%;
+        padding: 35px 25px;
+    }
+
+    .auth-box h1 {
+        font-size: 1.7rem;
+    }
+
+}
+
+
